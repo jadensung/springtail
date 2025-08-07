@@ -16,8 +16,8 @@ def decode_url(url):
         return None
 
 def main():
-    # Set up GNews to get news in English, US, max 50 articles
-    google_news = GNews(language='en', country='US', max_results=50)
+    # Set up GNews to get news in English, US, max 30 articles
+    google_news = GNews(language='en', country='US', max_results=30)
 
     print("Fetching candidate articles...")
     candidates = google_news.get_top_news()
