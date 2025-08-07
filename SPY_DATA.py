@@ -35,8 +35,9 @@ for date in selected_data.index:
     })
 
 
-folder_path = r"C:\Users\Jaden\Desktop\spy_data"
-os.makedirs(folder_path, exist_ok=True)
+desktop = Path.home() / "Desktop"
+output_folder = desktop / "spy_data"
+output_folder.mkdir(parents=True, exist_ok=True)
 
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 filename = f"spy_data_clean_{timestamp}.json"
