@@ -1,0 +1,6 @@
+gnews
+newspaper3k
+yfinance
+pandas
+googlenewsdecoder
+lxml-html-clean
