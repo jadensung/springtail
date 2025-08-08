@@ -3,7 +3,7 @@ import datetime
 import os
 import json
 import pandas as pd  
-
+from pathlib import Path
 
 date1 = datetime.datetime.today()
 date2 = date1 - datetime.timedelta(days=30)
@@ -35,16 +35,16 @@ for date in selected_data.index:
     })
 
 
-desktop = Path.home() / "Desktop"
-output_folder = desktop / "spy_data"
+base_folder = Path(__file__).parent
+output_folder = base_folder / "spyoutput"
 output_folder.mkdir(parents=True, exist_ok=True)
 
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 filename = f"spy_data_clean_{timestamp}.json"
-json_path = os.path.join(folder_path, filename)
+json_path = os.path.join(output_folder, filename)
 
 
 with open(json_path, 'w') as f:
     json.dump(data_json, f, indent=4)
 
-print(f"Saved clean JSON to {json_path}")
+print(f"Saved JSON to {json_path}")
