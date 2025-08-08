@@ -26,15 +26,17 @@ pip install -r requirements.txt
 # Acknowledgements
 
 1. Thanks to our mentors and guides:
- Mr. Dongwook Jangg
- Mr. Zuhawn Sung
+ - Mr. Dongwook Jang
+
+ - Mr. Zuhawn Sung
+
 2. Techonologies Used
- gnews - for fetching recent news headlines
- newspaper3k - for article parsing and scraping
- yfinance - for retrieving 
- pandas - for data processing
- googlenewsdecoder - for decoding Google News article metadata
- lxml-html-clean - cleaning and parsing HTML from articles
+  - gnews - for fetching recent news headlines
+  - newspaper3k - for article parsing and scraping
+  - yfinance - for retrieving 
+  - pandas - for data processing
+  - googlenewsdecoder - for decoding Google News article metadata
+  - lxml-html-clean - cleaning and parsing HTML from articles
 
  
  
