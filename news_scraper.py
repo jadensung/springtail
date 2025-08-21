@@ -16,8 +16,8 @@ def decode_url(url):
         return None
 
 def main():
-    # Set up GNews to get news in English, US, max 30 articles
-    google_news = GNews(language='en', country='US', max_results=30)
+    # Set up GNews to get news in English, US, max 50 articles
+    google_news = GNews(language='en', country='US', max_results=50)
 
     print("Fetching candidate articles...")
     candidates = google_news.get_top_news()
@@ -28,9 +28,9 @@ def main():
     added = 0
 
     # Folder named with today's date in YYYY-MM-DD format
-    date_folder = datetime.now().strftime('%Y-%m-%d')
+    date = datetime.now().strftime('%Y-%m-%d')
     base_folder = "scraperoutput"
-    os.makedirs(os.path.join(base_folder, date_folder), exist_ok=True)
+    os.makedirs(os.path.join(base_folder), exist_ok=True)
 
     for item in candidates:
         if added >= 15:
@@ -70,7 +70,7 @@ def main():
         time.sleep(0.5)
 
     # Save all articles into one JSON file
-    output_path = os.path.join(base_folder, date_folder, f"{date_folder}.json")
+    output_path = os.path.join(base_folder, f"{date}.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(articles, f, ensure_ascii=False, indent=2)
 
